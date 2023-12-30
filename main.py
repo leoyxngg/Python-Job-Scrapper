@@ -7,7 +7,7 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 results = soup.find(id="ResultsContainer")
 
-search = input("What job would you like to be scrapped? ").lower()
+search = input("Enter a key word to show related jobs: ").lower()
 searchJobs = results.find_all(
     "h2", string=lambda text: search in text.lower()
 )
